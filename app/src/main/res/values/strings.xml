@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">FragmentNavigator</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="action_exception">Exception</string>
+
+
+    <array name="main_tabs_string">
+        <item>选项一</item>
+        <item>选项二</item>
+        <item>选项三</item>
+        <item>选项四</item>
+        <item>选项五</item>
+        <item>选项六</item>
+        <item>选项七</item>
+        <item>选项八</item>
+        <item>选项九</item>
+    </array>
+</resources>
