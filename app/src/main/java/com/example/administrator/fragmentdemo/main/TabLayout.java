@@ -28,7 +28,6 @@ public class TabLayout extends LinearLayout {
         super(context, attrs, defStyleAttr);
         setOrientation(HORIZONTAL);
         inflate(context, R.layout.layout_tab, this);
-
         int childCount = getChildCount();
         for (int i = 0; i < childCount; i++) {
             View view = getChildAt(i);

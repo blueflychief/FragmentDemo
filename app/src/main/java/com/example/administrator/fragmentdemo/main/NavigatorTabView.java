@@ -81,11 +81,6 @@ public class NavigatorTabView extends ScrollView {
         if (child instanceof ViewGroup) {
             ViewGroup group = (ViewGroup) child;
             group.setSelected(select);
-//            if (select) {
-//                group.setBackgroundColor(getResources().getColor(R.color.main_tab_selected));
-//            } else {
-//                group.setBackgroundColor(getResources().getColor(R.color.main_tab_unselected));
-//            }
             for (int i = 0; i < group.getChildCount(); i++) {
                 selectChild(group.getChildAt(i), select);
             }
