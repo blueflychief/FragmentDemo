@@ -1,21 +1,18 @@
 package com.example.administrator.fragmentdemo.main;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
 import com.example.administrator.fragmentdemo.R;
+import com.example.administrator.fragmentdemo.base.BaseActivity;
 
-public class ExceptionActivity extends AppCompatActivity {
-
+public class ExceptionActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_exception);
-
         final Button button = (Button) findViewById(R.id.btnException);
-
         if (button != null) {
             button.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -24,6 +21,21 @@ public class ExceptionActivity extends AppCompatActivity {
                 }
             });
         }
+
+    }
+
+    @Override
+    protected void setContentView(Bundle savedInstanceState) {
+
+    }
+
+    @Override
+    protected void initData() {
+
+    }
+
+    @Override
+    protected void findViews() {
 
     }
 }

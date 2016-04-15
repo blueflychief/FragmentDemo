@@ -2,7 +2,7 @@ package com.example.administrator.fragmentdemo.main;
 
 import android.support.v4.app.Fragment;
 
-import com.example.administrator.fragmentdemo.fragmentnavigator.FragmentNavigatorAdapter;
+import com.example.administrator.fragmentdemo.navigator.FragmentNavigatorAdapter;
 
 
 public class ChildFragmentAdapter implements FragmentNavigatorAdapter {

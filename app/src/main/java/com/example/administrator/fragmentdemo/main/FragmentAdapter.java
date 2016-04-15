@@ -3,7 +3,7 @@ package com.example.administrator.fragmentdemo.main;
 import android.support.v4.app.Fragment;
 
 import com.example.administrator.fragmentdemo.R;
-import com.example.administrator.fragmentdemo.fragmentnavigator.FragmentNavigatorAdapter;
+import com.example.administrator.fragmentdemo.navigator.FragmentNavigatorAdapter;
 import com.example.administrator.fragmentdemo.utils.StringUtil;
 
 

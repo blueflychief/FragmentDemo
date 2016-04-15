@@ -1,4 +1,4 @@
-package com.example.administrator.fragmentdemo.fragmentnavigator;
+package com.example.administrator.fragmentdemo.navigator;
 
 import android.support.v4.app.Fragment;
 

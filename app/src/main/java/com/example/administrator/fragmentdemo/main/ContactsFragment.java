@@ -9,7 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.administrator.fragmentdemo.R;
-import com.example.administrator.fragmentdemo.fragmentnavigator.FragmentNavigator;
+import com.example.administrator.fragmentdemo.navigator.FragmentNavigator;
 
 
 public class ContactsFragment extends Fragment {
