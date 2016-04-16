@@ -1,4 +1,4 @@
-package com.example.administrator.fragmentdemo.splash;
+package com.example.administrator.fragmentdemo.utils;
 
 import android.content.Context;
 import android.text.TextUtils;

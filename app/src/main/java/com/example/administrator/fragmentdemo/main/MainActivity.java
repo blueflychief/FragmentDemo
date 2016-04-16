@@ -9,8 +9,7 @@ import android.view.View;
 import com.example.administrator.fragmentdemo.R;
 import com.example.administrator.fragmentdemo.base.BaseActivity;
 import com.example.administrator.fragmentdemo.navigator.FragmentNavigator;
-import com.example.administrator.fragmentdemo.splash.ToastUtils;
-import com.example.administrator.fragmentdemo.utils.LogUtil;
+import com.example.administrator.fragmentdemo.utils.ToastUtils;
 
 import java.util.Timer;
 import java.util.TimerTask;

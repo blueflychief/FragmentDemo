@@ -18,7 +18,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.example.administrator.fragmentdemo.crash.log;
+package com.example.administrator.fragmentdemo.utils.crash.log;
+
+import com.example.administrator.fragmentdemo.base.BaseApplication;
+import com.example.administrator.fragmentdemo.utils.crash.reporter.AbstractCrashHandler;
 
 import java.io.BufferedWriter;
 import java.io.Closeable;
@@ -31,7 +34,7 @@ import java.util.Calendar;
 import java.util.Locale;
 
 public class CrashLogWriter {
-    private static final SimpleDateFormat timeFormat = new SimpleDateFormat("MM-dd HH:mm:ss.SSS",
+    private static final SimpleDateFormat timeFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS",
             Locale.getDefault());
 
     /**
@@ -41,7 +44,7 @@ public class CrashLogWriter {
      * @param message
      * @param tr
      */
-    public static synchronized void writeLog(File logFile, String tag, String message, Throwable tr) {
+    public static synchronized void writeLog(CrashListener listener,File logFile, String tag, String message, Throwable tr) {
         logFile.getParentFile().mkdirs();
         if (!logFile.exists()) {
             try {
@@ -59,6 +62,7 @@ public class CrashLogWriter {
                 fileWriter = new FileWriter(logFile, true);
                 bufdWriter = new BufferedWriter(fileWriter);
                 printWriter = new PrintWriter(fileWriter);
+                bufdWriter.append(((AbstractCrashHandler)listener).buildBody(BaseApplication.getInstance()));
                 bufdWriter.append(time).append(" ").append("E").append('/').append(tag).append(" ")
                         .append(message).append('\n');
                 bufdWriter.flush();

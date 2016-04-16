@@ -1,4 +1,4 @@
-package com.example.administrator.fragmentdemo.crash.util;
+package com.example.administrator.fragmentdemo.utils.crash.util;
 
 
 public class AssertUtil {

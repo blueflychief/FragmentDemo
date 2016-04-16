@@ -14,7 +14,9 @@ import android.widget.TextView;
 
 import com.example.administrator.fragmentdemo.R;
 import com.example.administrator.fragmentdemo.base.BaseActivity;
+import com.example.administrator.fragmentdemo.config.SatticConstants;
 import com.example.administrator.fragmentdemo.main.MainActivity;
+import com.example.administrator.fragmentdemo.utils.PackageUtil;
 import com.example.administrator.fragmentdemo.utils.SPUtil;
 
 import java.util.ArrayList;
@@ -52,6 +54,13 @@ public class GuideActivity extends BaseActivity {
         iv_dot = (ImageView) findViewById(R.id.iv_dot);
         tv_jump = (TextView) findViewById(R.id.tv_jump);
         bt_experience = (TextView) findViewById(R.id.bt_experience);
+        tv_jump.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(GuideActivity.this, MainActivity.class));
+                finish();
+            }
+        });
     }
 
     @Override
@@ -81,7 +90,7 @@ public class GuideActivity extends BaseActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        SPUtil.setParam(this, "is_skip_guide", true);
+        SPUtil.setParam(this, SatticConstants.SHOW_GUIDE_PAGE+ PackageUtil.getVersionName(), false);
     }
 
     ViewPager.OnPageChangeListener listener = new ViewPager.OnPageChangeListener() {

@@ -18,11 +18,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.example.administrator.fragmentdemo.crash.log;
+package com.example.administrator.fragmentdemo.utils.crash.log;
 
 import android.os.Looper;
 
-import com.example.administrator.fragmentdemo.crash.util.AssertUtil;
+import com.example.administrator.fragmentdemo.utils.crash.util.AssertUtil;
 import com.example.administrator.fragmentdemo.utils.LogUtil;
 
 import java.io.File;
@@ -46,7 +46,7 @@ public class CrashCatcher implements UncaughtExceptionHandler {
     @Override
     public void uncaughtException(final Thread thread, final Throwable ex) {
         try {
-            CrashLogWriter.writeLog(mLogFile, "CrashHandler", ex.getMessage(), ex);
+            CrashLogWriter.writeLog(mListener,mLogFile, "CrashHandler", ex.getMessage(), ex);
         }catch (Exception e) {
             LogUtil.w("CrashCatcher:"+e);
         }

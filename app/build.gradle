@@ -1,9 +1,16 @@
 apply plugin: 'com.android.application'
 
 android {
+    signingConfigs {
+        config {
+            keyAlias 'fragmentdemo'
+            keyPassword 'fragmentdemo'
+            storeFile file('D:/AndroidStudioWorkspace/FragmentDemo/FragmentDemo/app/buildscript/fragmentdemo.jks')
+            storePassword 'fragmentdemo'
+        }
+    }
     compileSdkVersion 23
     buildToolsVersion "23.0.3"
-
     defaultConfig {
         applicationId "com.example.administrator.fragmentdemo"
         minSdkVersion 15
@@ -11,26 +18,25 @@ android {
         versionCode 1
         versionName "1.0"
     }
-
     buildTypes {
+        basetest {
+            buildConfigField("boolean", "BASE_DEVELOPING", "true")
+            buildConfigField("boolean", "BASE_DEVELOPED", "true")
+            buildConfigField("boolean", "BASE_LOG", "true")
+            buildConfigField("String", "API_HOST", "\"http://192.168.3.173:8080/nohttpserver111/\"")
+            versionNameSuffix "-test"
+            signingConfig signingConfigs.config
+            minifyEnabled false
+            debuggable true
+            //shrinkResources false
+        }
         debug {
             buildConfigField("boolean", "BASE_DEVELOPING", "true")
             buildConfigField("boolean", "BASE_DEVELOPED", "true")
             buildConfigField("boolean", "BASE_LOG", "true")
             buildConfigField("String", "API_HOST", "\"http://192.168.40.69/\"")
             versionNameSuffix "-debug"
-//            signingConfig signingConfigs.config
-            minifyEnabled false
-            debuggable true
-            //shrinkResources false
-        }
-        kktest {
-            buildConfigField("boolean", "BASE_DEVELOPING", "true")
-            buildConfigField("boolean", "BASE_DEVELOPED", "true")
-            buildConfigField("boolean", "BASE_LOG", "true")
-            buildConfigField("String", "API_HOST", "\"http://192.168.40.69/\"")
-            versionNameSuffix "-test"
-//            signingConfig signingConfigs.config
+            signingConfig signingConfigs.config
             minifyEnabled false
             debuggable true
             //shrinkResources false
@@ -41,13 +47,13 @@ android {
             buildConfigField("boolean", "BASE_LOG", "false")
             buildConfigField("String", "API_HOST", "\"http://s.192.168.40.69/\"")
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-//            signingConfig signingConfigs.config
+            signingConfig signingConfigs.config
             minifyEnabled true
             debuggable false
             shrinkResources true//移除无用的资源文件
+            signingConfig signingConfigs.config
         }
     }
-
     productFlavors {
         tencent {
         }
@@ -58,6 +64,10 @@ android {
         qihu360 {
         }
     }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_7
+        targetCompatibility JavaVersion.VERSION_1_7
+    }
 }
 
 dependencies {
@@ -66,12 +76,11 @@ dependencies {
     compile 'com.android.support:appcompat-v7:23.2.1'
     compile 'de.greenrobot:eventbus:3.0.0-beta1'
     compile 'com.alibaba:fastjson:1.2.7'
-    compile 'com.zhy:percent-support-extends:1.1.1'
-    compile 'com.umeng.analytics:analytics:5.5.3'
     compile 'com.github.bumptech.glide:glide:3.7.0'
     compile 'com.android.support:recyclerview-v7:23.2.1'
     compile 'com.android.support:design:23.2.1'
     compile files('libs/activation.jar')
     compile files('libs/additionnal.jar')
     compile files('libs/mail.jar')
+    compile files('libs/nohttp.jar')
 }

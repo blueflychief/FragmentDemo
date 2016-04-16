@@ -18,7 +18,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.example.administrator.fragmentdemo.crash.reporter;
+package com.example.administrator.fragmentdemo.utils.crash.reporter;
 
 import android.content.Context;
 import android.content.pm.ApplicationInfo;
@@ -26,7 +26,7 @@ import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.os.Build;
 
-import com.example.administrator.fragmentdemo.crash.log.CrashListener;
+import com.example.administrator.fragmentdemo.utils.crash.log.CrashListener;
 
 import java.io.File;
 import java.util.concurrent.ExecutorService;

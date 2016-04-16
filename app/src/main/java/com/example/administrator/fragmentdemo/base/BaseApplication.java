@@ -2,7 +2,10 @@ package com.example.administrator.fragmentdemo.base;
 
 import android.app.Application;
 
-import com.example.administrator.fragmentdemo.crash.CrashHandler;
+import com.example.administrator.fragmentdemo.BuildConfig;
+import com.example.administrator.fragmentdemo.utils.crash.CrashHandler;
+import com.yolanda.nohttp.Logger;
+import com.yolanda.nohttp.NoHttp;
 
 /**
  * Created by Administrator on 4/14/2016.
@@ -14,7 +17,11 @@ public class BaseApplication extends Application {
     public void onCreate() {
         super.onCreate();
         sINSTANCE = this;
-        initEmailReporter();
+        NoHttp.init(this);
+        if (!BuildConfig.DEBUG) {
+            initEmailReporter();
+        }
+        Logger.setDebug(BuildConfig.DEBUG);//nohttp调试模式
     }
 
     /**

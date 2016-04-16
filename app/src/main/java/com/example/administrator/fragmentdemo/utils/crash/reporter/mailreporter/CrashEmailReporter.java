@@ -18,11 +18,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.example.administrator.fragmentdemo.crash.reporter.mailreporter;
+package com.example.administrator.fragmentdemo.utils.crash.reporter.mailreporter;
 
 import android.content.Context;
 
-import com.example.administrator.fragmentdemo.crash.reporter.AbstractCrashHandler;
+import com.example.administrator.fragmentdemo.utils.crash.reporter.AbstractCrashHandler;
 import com.example.administrator.fragmentdemo.utils.LogUtil;
 
 import java.io.File;
@@ -89,9 +89,15 @@ public class CrashEmailReporter extends AbstractCrashHandler {
 
     @Override
     protected void sendReport(String title, String body, File file) {
-        LogMail sender = new LogMail().setUser(mSendEmail).setPass(mSendPassword)
-                .setFrom(mSendEmail).setTo(mReceiveEmail).setHost(mHost).setPort(mPort)
-                .setSubject(title).setBody(body);
+        LogMail sender = new LogMail()
+                .setUser(mSendEmail)
+                .setPass(mSendPassword)
+                .setFrom(mSendEmail)
+                .setTo(mReceiveEmail)
+                .setHost(mHost)
+                .setPort(mPort)
+                .setSubject(title)
+                .setBody(body);
         sender.init();
         try {
             sender.addAttachment(file.getPath(), file.getName());

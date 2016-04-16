@@ -1,32 +1,31 @@
 package com.example.administrator.fragmentdemo.main;
 
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.Button;
 
 import com.example.administrator.fragmentdemo.R;
-import com.example.administrator.fragmentdemo.base.BaseActivity;
+import com.example.administrator.fragmentdemo.base.AppCompatBaseActivity;
 
-public class ExceptionActivity extends BaseActivity {
+public class ExceptionActivity extends AppCompatBaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_exception);
-        final Button button = (Button) findViewById(R.id.btnException);
-        if (button != null) {
-            button.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    throw new RuntimeException("This will crash the app");
-                }
-            });
-        }
+
 
     }
 
     @Override
-    protected void setContentView(Bundle savedInstanceState) {
-
+    protected void findViews(View root) {
+//        final Button button = (Button) root.findViewById(R.id.btnException);
+//        if (button != null) {
+//            button.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View v) {
+//                    throw new RuntimeException("This will crash the app");
+//                }
+//            });
+//        }
     }
 
     @Override
@@ -35,7 +34,7 @@ public class ExceptionActivity extends BaseActivity {
     }
 
     @Override
-    protected void findViews() {
-
+    public View setContentView(Bundle savedInstanceState, LayoutInflater inflater) {
+        return inflater.inflate(R.layout.activity_exception,null);
     }
 }

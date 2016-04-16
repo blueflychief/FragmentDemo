@@ -1,10 +1,10 @@
-package com.example.administrator.fragmentdemo.crash;
+package com.example.administrator.fragmentdemo.utils.crash;
 
 import android.content.Context;
 
-import com.example.administrator.fragmentdemo.crash.log.CrashCatcher;
-import com.example.administrator.fragmentdemo.crash.reporter.AbstractCrashHandler;
-import com.example.administrator.fragmentdemo.crash.reporter.mailreporter.CrashEmailReporter;
+import com.example.administrator.fragmentdemo.utils.crash.log.CrashCatcher;
+import com.example.administrator.fragmentdemo.utils.crash.reporter.AbstractCrashHandler;
+import com.example.administrator.fragmentdemo.utils.crash.reporter.mailreporter.CrashEmailReporter;
 import com.example.administrator.fragmentdemo.utils.DateUtil;
 import com.example.administrator.fragmentdemo.utils.LogUtil;
 
